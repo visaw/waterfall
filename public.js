@@ -80,28 +80,28 @@ function setAppend(boxIndex) {
     heightArray[index] += boxes[boxIndex].clientHeight;
 }
 
-window.onscroll = function() {
-    maxHeight = Math.max.apply(null, heightArray);
-    var documentH = document.documentElement.clientHeight;
-    var scrollH = document.documentElement.scrollTop || document.body.scrollTop;
-    if (maxHeight <= (documentH + scrollH)) {
-        for (var i = 0; i < data.length; i++) {
-            var box = document.createElement("div");
-            box.className = "box";
-            var link = document.createElement("a");
-            link.href = "#";
-            var img = document.createElement("img");
-            img.src = data[i].src;
-            link.appendChild(img);
-            box.appendChild(link);
-            wrap.appendChild(box);
-            boxLen++;
-            setAppend(boxLen - 1);
-        }
-    }
-};
-
 window.onload = function() {
     getColsNum();
     setPosition();
+
+    window.onscroll = function() {
+        maxHeight = Math.max.apply(null, heightArray);
+        var documentH = document.documentElement.clientHeight;
+        var scrollH = document.documentElement.scrollTop || document.body.scrollTop;
+        if (maxHeight <= (documentH + scrollH)) {
+            for (var i = 0; i < data.length; i++) {
+                var box = document.createElement("div");
+                box.className = "box";
+                var link = document.createElement("a");
+                link.href = "#";
+                var img = document.createElement("img");
+                img.src = data[i].src;
+                link.appendChild(img);
+                box.appendChild(link);
+                wrap.appendChild(box);
+                boxLen++;
+                setAppend(boxLen - 1);
+            }
+        }
+    };
 };
