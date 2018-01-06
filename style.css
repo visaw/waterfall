@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.wrap {
+    position: relative;
+    width: auto;
+    margin: 0 auto;
+}
+
+.box {
+    position: absolute;
+    margin: 10px 0;
+    float: left;
+    width: 150px;
+    padding: 0 10px;
+    height: auto;
+    box-sizing: border-box;
+}
+
+.box img {
+    width: 100%;
+}
