@@ -101,5 +101,7 @@ window.onscroll = function() {
     }
 };
 
-getColsNum();
-setPosition();
+window.onload = function() {
+    getColsNum();
+    setPosition();
+};
